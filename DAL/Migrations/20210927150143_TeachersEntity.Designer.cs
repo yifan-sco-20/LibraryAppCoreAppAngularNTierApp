@@ -4,14 +4,16 @@ using DAL.DataContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DAL.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20210927150143_TeachersEntity")]
+    partial class TeachersEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -136,21 +138,6 @@ namespace DAL.Migrations
                     b.ToTable("Grades");
                 });
 
-            modelBuilder.Entity("DAL.Entities.Major", b =>
-                {
-                    b.Property<long>("MajorID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Major_Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("MajorID");
-
-                    b.ToTable("Majors");
-                });
-
             modelBuilder.Entity("DAL.Entities.Student", b =>
                 {
                     b.Property<long>("StudentID")
@@ -179,21 +166,6 @@ namespace DAL.Migrations
                     b.HasKey("TeacherID");
 
                     b.ToTable("Teachers");
-                });
-
-            modelBuilder.Entity("DAL.Entities.Unit", b =>
-                {
-                    b.Property<long>("UnitID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Unit_Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("UnitID");
-
-                    b.ToTable("Units");
                 });
 
             modelBuilder.Entity("DAL.Entities.Application", b =>

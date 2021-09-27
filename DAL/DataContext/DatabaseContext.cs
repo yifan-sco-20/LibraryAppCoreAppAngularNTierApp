@@ -44,6 +44,12 @@ namespace DAL.DataContext
 
         public DbSet<Student> Students { get; set; }
 
+        public DbSet<Teacher> Teachers { get; set; }
+
+        public DbSet<Unit> Units { get; set; }
+
+        public DbSet<Major> Majors { get; set; }
+
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
         //    //SET CUSTOM DEFAULT VALUE ON CREATION

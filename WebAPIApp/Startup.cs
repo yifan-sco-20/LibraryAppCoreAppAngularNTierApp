@@ -43,6 +43,10 @@ namespace WebAPIApp
             //services.AddScoped<IGrade_Service, Grade_Service>();
             //services.AddScoped<IApplication_Service, Application_Service>();
             //services.AddScoped<IApplicationStatus_Service, ApplicationStatus_Service>();
+            services.AddScoped<IUser_Service, User_Service>();
+            services.AddScoped<IMessage_Service, Message_Service>();
+            services.AddScoped<IReply_Service, Reply_Service>();
+
             #endregion
 
             #region CORS

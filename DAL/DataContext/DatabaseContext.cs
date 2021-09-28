@@ -43,12 +43,11 @@ namespace DAL.DataContext
         public DbSet<Grade> Grades { get; set; }
 
         public DbSet<Student> Students { get; set; }
+        public DbSet<User> Users { get; set; }
 
-        public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Message> Messages { get; set; }
+        public DbSet<Reply> Replies { get; set; }
 
-        public DbSet<Unit> Units { get; set; }
-
-        public DbSet<Major> Majors { get; set; }
 
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{
